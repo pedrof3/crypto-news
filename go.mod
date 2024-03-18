@@ -1,4 +1,4 @@
-module crypto-news
+module github.com/pedrof3/crypto-news
 
 go 1.22.1
 
