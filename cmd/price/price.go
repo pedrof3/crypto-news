@@ -21,6 +21,14 @@ var PriceCmd = &cobra.Command{
 	},
 }
 
+func init() {
+	PriceCmd.AddCommand(btcPrice)
+	PriceCmd.AddCommand(ethPrice)
+	PriceCmd.AddCommand(solPrice)
+	PriceCmd.AddCommand(top10Price)
+	PriceCmd.AddCommand(top20Price)
+}
+
 // func init() {
 // 	rootCmd.AddCommand(priceCmd)
 

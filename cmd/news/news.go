@@ -24,6 +24,13 @@ to quickly create a Cobra application.`,
 	},
 }
 
+func init() {
+	NewsCmd.AddCommand(btcNews)
+	NewsCmd.AddCommand(ethNews)
+	NewsCmd.AddCommand(solNews)
+	NewsCmd.AddCommand(defiNews)
+}
+
 // func init() {
 // 	rootCmd.AddCommand(newsCmd)
 

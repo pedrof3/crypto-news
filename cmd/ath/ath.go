@@ -17,8 +17,16 @@ var AthCmd = &cobra.Command{
 	crypto-news --ath btc: show bitcoin all time highest price
 	crypto-news --ath 20: list all time highest prices for top 20 coins by market cap`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("ath called")
+		fmt.Println("All-time high")
 	},
+}
+
+func init() {
+	AthCmd.AddCommand(btcAth)
+	AthCmd.AddCommand(ethAth)
+	AthCmd.AddCommand(solAth)
+	AthCmd.AddCommand(top10Ath)
+	AthCmd.AddCommand(top20Ath)
 }
 
 // func init() {
