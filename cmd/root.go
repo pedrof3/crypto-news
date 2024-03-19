@@ -6,11 +6,14 @@ package cmd
 import (
 	"os"
 
+	"github.com/pedrof3/crypto-news/cmd/ath"
+	"github.com/pedrof3/crypto-news/cmd/news"
+	"github.com/pedrof3/crypto-news/cmd/price"
 	"github.com/spf13/cobra"
 )
 
 // rootCmd represents the base command when called without any subcommands
-var rootCmd = &cobra.Command{
+var RootCmd = &cobra.Command{
 	Use:   "crypto-news",
 	Short: "Daily cryptocurrency news",
 	Long:  `CLI applicationf for cryptocurrency news, statistics, graphics and more`,
@@ -22,13 +25,16 @@ var rootCmd = &cobra.Command{
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	err := rootCmd.Execute()
+	err := RootCmd.Execute()
 	if err != nil {
 		os.Exit(1)
 	}
 }
 
 func init() {
+	RootCmd.AddCommand(ath.AthCmd)
+	RootCmd.AddCommand(news.NewsCmd)
+	RootCmd.AddCommand(price.PriceCmd)
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.

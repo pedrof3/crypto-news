@@ -1,8 +1,7 @@
 /*
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
 */
-package cmd
+package news
 
 import (
 	"fmt"
@@ -11,7 +10,7 @@ import (
 )
 
 // newsCmd represents the news command
-var newsCmd = &cobra.Command{
+var NewsCmd = &cobra.Command{
 	Use:   "news",
 	Short: "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
@@ -25,16 +24,16 @@ to quickly create a Cobra application.`,
 	},
 }
 
-func init() {
-	rootCmd.AddCommand(newsCmd)
+// func init() {
+// 	rootCmd.AddCommand(newsCmd)
 
-	// Here you will define your flags and configuration settings.
+// 	Here you will define your flags and configuration settings.
 
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// newsCmd.PersistentFlags().String("foo", "", "A help for foo")
+// 	Cobra supports Persistent Flags which will work for this command
+// 	and all subcommands, e.g.:
+// 	newsCmd.PersistentFlags().String("foo", "", "A help for foo")
 
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// newsCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-}
+// 	Cobra supports local flags which will only run when this command
+// 	is called directly, e.g.:
+// 	newsCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+// }
