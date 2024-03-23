@@ -4,7 +4,9 @@ Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"fmt"
 	"os"
+	"time"
 
 	"github.com/pedrof3/crypto-news/cmd/ath"
 	"github.com/pedrof3/crypto-news/cmd/news"
@@ -13,35 +15,35 @@ import (
 )
 
 // rootCmd represents the base command when called without any subcommands
-var RootCmd = &cobra.Command{
+var rootCmd = &cobra.Command{
 	Use:   "crypto-news",
 	Short: "Daily cryptocurrency news",
-	Long:  `CLI applicationf for cryptocurrency news, statistics, graphics and more`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
+	Long:  `CLI application for cryptocurrency news, statistics, graphics and more`,
+	Run: func(cmd *cobra.Command, args []string) {
+		cmd.Help()
+	},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	err := RootCmd.Execute()
+	err := rootCmd.Execute()
 	if err != nil {
 		os.Exit(1)
 	}
 }
 
+func printDateTime() {
+	y, m, d := time.Now().Date()
+	hour, min, sec := time.Now().Clock()
+
+	fmt.Printf("%d %s %d | %.2d:%.2d:%.2d\n", d, m, y, hour, min, sec)
+}
+
 func init() {
-	RootCmd.AddCommand(ath.AthCmd)
-	RootCmd.AddCommand(news.NewsCmd)
-	RootCmd.AddCommand(price.PriceCmd)
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
+	rootCmd.AddCommand(ath.AthCmd)
+	rootCmd.AddCommand(news.NewsCmd)
+	rootCmd.AddCommand(price.PriceCmd)
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.crypto-news.yaml)")
-
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	// rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	printDateTime()
 }

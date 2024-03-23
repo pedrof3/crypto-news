@@ -13,7 +13,6 @@ import (
 var solAth = &cobra.Command{
 	Use:   "sol",
 	Short: "All-time highest price for Solana",
-	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("All-time highest price for Solana")
 	},

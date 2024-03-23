@@ -13,7 +13,6 @@ import (
 var ethAth = &cobra.Command{
 	Use:   "eth",
 	Short: "All-time highest price for Ethereum",
-	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("All-time highest price for Ethereum")
 	},

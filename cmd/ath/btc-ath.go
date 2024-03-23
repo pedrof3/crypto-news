@@ -13,7 +13,6 @@ import (
 var btcAth = &cobra.Command{
 	Use:   "btc",
 	Short: "All-time highest price for Bitcoin",
-	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("All-time highest price for Bitcoin")
 	},

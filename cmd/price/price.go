@@ -4,20 +4,15 @@ Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 package price
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
 
 // priceCmd represents the price command
 var PriceCmd = &cobra.Command{
 	Use:   "price",
-	Short: "Tokens price. Show top 10 coins by default",
-	Long: `PRICE
-	crypto-news --price btc: show bitcoin price
-	crypto-news --price 20: list price for top 20 coins by market cap`,
+	Short: "Tokens price.",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("price called")
+		cmd.Help()
 	},
 }
 
