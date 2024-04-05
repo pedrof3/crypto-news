@@ -46,4 +46,5 @@ func init() {
 	rootCmd.AddCommand(price.PriceCmd)
 
 	printDateTime()
+
 }

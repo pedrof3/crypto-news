@@ -23,18 +23,3 @@ func init() {
 	AthCmd.AddCommand(top10Ath)
 	AthCmd.AddCommand(top20Ath)
 }
-
-// func init() {
-
-// 	rootCmd.AddCommand(athCmd)
-
-// 	Here you will define your flags and configuration settings.
-
-// 	Cobra supports Persistent Flags which will work for this command
-// 	and all subcommands, e.g.:
-// 	athCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-// 	Cobra supports local flags which will only run when this command
-// 	is called directly, e.g.:
-// 	athCmd.Flags().BoolVarP("toggle", "t", true, "Help message for toggle")
-// }
